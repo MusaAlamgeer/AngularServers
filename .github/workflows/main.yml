@@ -64,4 +64,4 @@ jobs:
 
       - name: Deploy
         run: |
-          npm deploy --base-href=/AngularServers/
+          npm run deploy
