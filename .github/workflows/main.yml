@@ -35,16 +35,16 @@ jobs:
       - name: Install Dependencies
         if: steps.cache-nodemodules.outputs.cache-hit != 'true'
         run: |
-          npm ci
+          ng ci
       - name: Build
         run: |
-          npm run build -- --prod
+          ng run build
 #       - name: Lint
 #         run: |
 #           npm run lint
 #       - name: Test
 #         run: |
-#           npm run test -- --prod
+#           npm run test
       - name: Conventional Changelog Action
         id: changelog
         uses: TriPSs/conventional-changelog-action@v3
@@ -64,4 +64,4 @@ jobs:
 
       - name: Deploy
         run: |
-          npm run deploy
+          ng deploy --base-href=/AngularServers/
